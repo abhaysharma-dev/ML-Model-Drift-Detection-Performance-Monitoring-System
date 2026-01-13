@@ -53,8 +53,8 @@ streamlit run app.py
 ├── model_utils.py         
 ├── drift_utils.py         
 ├── artifacts/
-│   ├── model_pipeline.pkl
-│   ├── baseline_stats.pkl
-│   └── baseline_positive_rate.pkl
+│ ├── model_pipeline.pkl
+│ ├── baseline_stats.pkl
+│ └── baseline_positive_rate.pkl
 ├── requirements.txt
 └── README.md
