@@ -49,9 +49,9 @@ streamlit run app.py
 ```
 
 ## Project Structure
-├── app.py                 # Streamlit UI and workflow control
-├── model_utils.py         # Model & baseline loaders
-├── drift_utils.py         # Feature & prediction drift logic
+├── app.py                 
+├── model_utils.py         
+├── drift_utils.py         
 ├── artifacts/
 │   ├── model_pipeline.pkl
 │   ├── baseline_stats.pkl
