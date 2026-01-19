@@ -42,12 +42,6 @@ The system compares new data distributions against baseline training statistics 
 
 ---
 
-## ▶️ Run the Application
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
-
 ## Project Structure
 
 ML-Model-Drift-Detection-Performance-Monitoring-System/
@@ -61,3 +55,9 @@ ML-Model-Drift-Detection-Performance-Monitoring-System/
 │ └── baseline_positive_rate.pkl
 ├── requirements.txt
 └── README.md
+
+## ▶️ Run the Application
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
