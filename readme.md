@@ -44,6 +44,7 @@ The system compares new data distributions against baseline training statistics 
 
 ## Project Structure
 
+```text
 ML-Model-Drift-Detection-Performance-Monitoring-System/
 |
 ├── app.py                 
