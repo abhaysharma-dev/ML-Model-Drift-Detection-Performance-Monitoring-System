@@ -61,10 +61,15 @@ Streamlit Dashboard
 ---
 
 ## 🧠 Key Concepts Implemented
-- Feature Drift Detection (mean shift vs baseline standard deviation)
-- Prediction Drift Detection (positive-rate distribution change)
+
+- Custom Feature Drift Detection (mean shift vs baseline standard deviation)
+- Custom Prediction Drift Detection (positive-rate distribution change)
+- Evidently AI based:
+    - Data Drift Detection
+    - Target Drift Detection
+    - Classification Performance Drift
 - ML Pipeline with ColumnTransformer
-- Baseline statistics persistence
+- Baseline statistics & prediction distribution persistence
 - Model health status classification (STABLE / MONITOR / HIGH RISK)
 
 ---
@@ -76,8 +81,14 @@ Streamlit Dashboard
    - Baseline prediction distribution
 2. Upload a new dataset via Streamlit
 3. System computes:
+   Custom Monitoring:
    - Feature-level drift
    - Prediction drift
+
+   Evidently AI Monitoring:
+   - Dataset Drift Report
+   - Target Drift Report
+   - Classification Performance Report
 4. Model health status is reported as:
    - **STABLE**
    - **MONITOR**
@@ -143,12 +154,12 @@ streamlit run app.py
 
 ## 📋 Requirements
 
-Python 3.11
-Streamlit
-Scikit-learn
-Pandas
-NumPy
-Evidently AI
-Joblib
+- Python=3.11
+- Streamlit
+- Scikit-learn
+- Pandas
+- NumPy
+- Evidently AI
+- Joblib
 
 ---
