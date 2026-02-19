@@ -1,7 +1,9 @@
-from model_utils import load_model,load_baseline_stats,load_baseline_positive_rate
+from src.model_utils import load_model,load_baseline_stats,load_baseline_positive_rate,prediction
+
+model = load_model()
 
 def feature_drift(features):
-    numerical_cols = features.select_dtypes(include = ["int64","float64"]).columns
+    numerical_cols = [col for col in features.select_dtypes(include = ["int64","float64"]).columns if col != "SeniorCitizen" ]
     new_stats = { }
     for cols in numerical_cols:
         new_stats[cols] = {
@@ -26,14 +28,14 @@ def feature_drift(features):
 
 def prediction_drift(new_data):
     pipeline = load_model()
-    new_pred = pipeline.predict(new_data)
+    new_pred = prediction(model,new_data)
     new_positive_rate = new_pred.mean()
     train_positive_rate = load_baseline_positive_rate()
     prediction_drift = abs(new_positive_rate-train_positive_rate) > 0.1
     return {
     "baseline_rate": train_positive_rate,
     "new_rate": new_positive_rate,
-    "drift_detected": bool(abs(new_positive_rate - train_positive_rate) > 0.1)
+    "drift_detected": bool(prediction_drift)
     }
 
 
